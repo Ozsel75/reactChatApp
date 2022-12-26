@@ -1,8 +1,20 @@
 import React from 'react'
+import styles from "./styles.module.css";
+import { useChat } from './context/ChatContext';
 
 function ChatList() {
+
+  const {messages} = useChat();
+
   return (
-    <div>ChatList</div>
+    <div className={styles.chatlist} >
+      {
+            messages.map((item, key) =>(<ChatItem key={key} item={item} />))
+        }
+
+
+        
+      </div>
   )
 }
 
