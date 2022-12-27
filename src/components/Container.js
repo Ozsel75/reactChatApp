@@ -1,8 +1,15 @@
 import React from 'react'
 import ChatForm from './ChatForm'
 import ChatList from './ChatList'
+import { useEffect } from 'react'
+import { init } from '../socketApi'
 
 function Container() {
+
+  useEffect(()=>{
+    init();
+  }, [])
+
   return (
     <div className={"App"}>
         <ChatList />
